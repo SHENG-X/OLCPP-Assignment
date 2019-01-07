@@ -2,6 +2,10 @@
 #include <iostream>
 using namespace std;
 
+int getch( ){
+      return 0;
+}
+
 int main()
 {
 //  clrscr();

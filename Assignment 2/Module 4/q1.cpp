@@ -1,8 +1,9 @@
 #include <iostream>
+#include <string>
+#include <stdio.h>
 using namespace std;
 void display(int mark[10][5], char studentNames[10][20] );
-void getGrade(int percent, char* grade[2]);
-void sortAlphabet(char name[10][20], int *ranking);
+string getGrade(int percent);
 
 int main() {
     char studentNames[10][20] = {"Alpha","Beta","Cindy","Danny","Steven","James","Emma","Nora","Lee","Woody"};
@@ -19,13 +20,12 @@ int main() {
         {71, 73, 86, 79, 84},
         {92, 75, 74, 73, 97}
         };
-    sortAlphabet(studentNames, ranking);
-    display(marks);
+    display(marks, studentNames);
     return 0;
 }
 
-void display(int mark[10][5], char studentNames[10][20] ) {
-    int total, percent;
+void display(int marks[10][5], char studentNames[10][20] ) {
+    int total=0, percent=0;
     //grade table
     /*
       A+    90-100
@@ -36,43 +36,43 @@ void display(int mark[10][5], char studentNames[10][20] ) {
       B-    70-72	
       F     0-69	
     */
-    char grade[2];
-    cout<<"name  mark 1  mark 2  mark 3  mark 4  mark 5  total  percentage Grade"<<endl;
+    printf("%7s  %s\n","name","mark 1     mark 2    mark 3    mark 4    mark 5  total  percentage  Grade");
     for (int i = 0; i <10; ++i) {
+          printf("%7s ",studentNames[i]);
           for(int j=0; j<5; ++j){
-                cout<<
+                printf("     %d   ",marks[i][j]);
+                total+=marks[i][j];
           }
+          const string grade = getGrade(total/5);
+          printf(" %d     %2.1f%%      %s \n",total, (float)total/5,grade.c_str());
+          total=0, percent=0;
     }
 }
 
-void getGrade(int percent, char* grade[2]){
+string getGrade(int percent){
       if(percent<=100 && percent>=90){
-            *grade= "A+";
+            return "A+";
       }
       else if(percent<=89 && percent>=85){
-            *grade= "A";
+            return "A";
       }
       else if(percent<=84 && percent>=80){
-            *grade = "A-";
+            return "A-";
       }
       else if(percent<=79 && percent>=77){
-            *grade = "B+";
+            return "B+";
       }
       else if(percent<=76 && percent>=73){
-            *grade = "B";
+            return "B";
       }
       else if(percent<=72 && percent>=70){
-            *grade = "B-";
+            return "B-";
       }
       else if(percent<=69 && percent>=0){
-            *grade = "D";
+            return "D";
       }
 }
 
-void sortAlphabet(char name[10][20], int *ranking)
-{
-
-}
 
 // Make a caracter array to store the names of ten students
 // make another int marks[10][5] array to store three marks for ten students
