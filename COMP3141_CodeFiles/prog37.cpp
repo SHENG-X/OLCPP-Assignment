@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <fstream>
 #include <cstdlib> // exit function prototype
-#include "ClientData.h" // ClientData class definition
+#include "ClientData.cpp" // ClientData class definition
 using namespace std;
 
 void outputLine( ostream&, const ClientData & ); // prototype

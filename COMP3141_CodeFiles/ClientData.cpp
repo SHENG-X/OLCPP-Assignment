@@ -1,7 +1,7 @@
 // Fig. 14.10: ClientData.cpp
 // Class ClientData stores customer's credit information.
 #include <string>
-#include "ClientData.h"
+#include "./ClientData.h"
 using namespace std;
 
 // default ClientData constructor

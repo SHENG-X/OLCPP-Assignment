@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include "ClientData.h" // ClientData class definition
+#include "./ClientData.cpp" // ClientData class definition
 using namespace std;
 
 int main()
@@ -14,7 +14,7 @@ int main()
    if ( !outCredit )
    {
       cerr << "File could not be opened." << endl;
-      exit( EXIT_FAILURE );
+      exit( 1 );
    } // end if
    int account;
    char lname[ 15 ];
