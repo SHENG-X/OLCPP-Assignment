@@ -3,8 +3,8 @@ using namespace std;
 class B
 {
     public:
-     virtual void display()/* Virtual function */
-         { cout<<"Content of base class.\n"; }
+    //  virtual void display()/* Virtual function */
+    //      { cout<<"Content of base class.\n"; }
 };
 
 class D1 : public B
