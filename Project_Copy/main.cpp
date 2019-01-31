@@ -42,7 +42,7 @@ int main()
     double Operand_A, Operand_B;
     BasicCalculator basicCalculator;
     ScientificCalculator scientificaCalculator;
-    cout<<greenb<<"Press < , > to change mode and opeartions; Press ESC to EXIT"<<defb<<endl<<endl;
+    cout<<greenb<<"Press [a, w, d, s] or [<, >] to change mode and opeartions; Press ESC to EXIT"<<defb<<endl<<endl;
     while(1){//start using calculator, promote user which calculator to use
         cout<<blueb<<"Select Calculator Type:"<<defb<<endl;
         for (int i=0;i<calculatorSize;i++){
@@ -94,14 +94,14 @@ int main()
                         cout<<greenb<<"Press < , > to change mode and opeartions; Press ESC to EXIT"<<defb<<endl<<endl;
                         
                     }
-                    else if(ascii_value==60){
+                    else if(ascii_value==60||ascii_value==65||ascii_value==83||ascii_value==97||ascii_value==119){
                         if(selectedOperationIdx>0){
                             selectedOperationIdx--;
                         }else{
                             selectedOperationIdx=5;
                         }
                     }
-                    else if(ascii_value==62){
+                    else if(ascii_value==62||ascii_value==68||ascii_value==87||ascii_value==100||ascii_value==115){
                         if(selectedOperationIdx<6){
                             selectedOperationIdx++;
                         }else{
